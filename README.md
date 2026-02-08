@@ -90,9 +90,8 @@ The project is optimized for deployment on [Vercel](https://vercel.com).
 ## 🤝 Contact
 
 **Shreya Raval**
--   **Portfolio**: [Link to your portfolio if applicable]
--   **Email**: [Your Email]
--   **LinkedIn**: [Your LinkedIn Profile]
+-   **Portfolio**: https://shreya-raval-portfolio.vercel.app/
+-   **Email**: ravalshreya.2004@gmail.com
 
 ---
 
