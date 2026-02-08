@@ -30,7 +30,7 @@ export default function Home() {
 
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0.25, 0.40, 0.60, 0.75],
+    [0.25, 0.40, 0.60, 0.70],
     [
       THEME_COLORS.day.background,
       THEME_COLORS.pink.background,
@@ -41,7 +41,7 @@ export default function Home() {
 
   const foregroundColor = useTransform(
     scrollYProgress,
-    [0.25, 0.40, 0.60, 0.75],
+    [0.25, 0.40, 0.60, 0.70],
     [
       THEME_COLORS.day.foreground,
       THEME_COLORS.pink.foreground,
@@ -52,7 +52,7 @@ export default function Home() {
 
   const accentColor = useTransform(
     scrollYProgress,
-    [0.25, 0.40, 0.60, 0.75],
+    [0.25, 0.40, 0.60, 0.70],
     [
       THEME_COLORS.day.accent,
       THEME_COLORS.pink.accent,
@@ -91,7 +91,7 @@ export default function Home() {
       </div>
 
       {/* Skills Section - Night Theme */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-20 w-full">
         <SkillsSection />
       </div>
 

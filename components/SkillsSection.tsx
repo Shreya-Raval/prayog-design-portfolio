@@ -54,7 +54,7 @@ const skills = [
 
 export default function SkillsSection() {
     return (
-        <section className="h-screen w-full relative overflow-hidden bg-[#0F172A] flex flex-col items-center justify-center py-8 md:py-12 px-4 md:px-8">
+        <section className="min-h-screen w-full relative z-20 overflow-hidden bg-[#0F172A] flex flex-col items-center justify-center py-20 md:py-12 px-4 md:px-8">
             {/* Background Effects */}
             <Spotlight />
             <StageLights />
@@ -64,33 +64,33 @@ export default function SkillsSection() {
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)] pointer-events-none" />
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-6xl h-full flex flex-col">
+            <div className="relative z-10 w-full max-w-6xl flex flex-col md:h-full justify-center">
 
                 {/* Top Section (approx 25-30%) */}
                 <motion.div
-                    className="flex-initial flex flex-col justify-end items-center text-center space-y-3 pb-8 md:pb-12"
+                    className="flex-initial flex flex-col justify-end items-center text-center space-y-3 mb-8 md:mb-10"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                    <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-white uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                         What I Bring to <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Prayog</span>
                     </h2>
-                    <p className="text-lg md:text-xl text-slate-400 font-light tracking-[0.2em] uppercase">
+                    <p className="text-sm md:text-xl text-slate-400 font-light tracking-[0.2em] uppercase">
                         Where Technology Meets Celebration
                     </p>
                 </motion.div>
 
                 {/* Main Content Grid (60-65%) */}
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 min-h-0">
+                <div className="md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {skills.map((skill, index) => (
                         <SkillCard key={index} skill={skill} index={index} />
                     ))}
                 </div>
 
-                {/* Bottom Section (10%) - Spacer/Indicator */}
-                <div className="flex-none h-[5vh] flex items-center justify-center mt-4">
+                {/* Bottom Section (10%) - Spacer/Indicator (Desktop Only) */}
+                <div className="hidden md:flex flex-none h-[5vh] items-center justify-center mt-4">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.3 }}
@@ -154,7 +154,7 @@ function SkillCard({ skill, index }: { skill: any, index: number }) {
             {/* Header */}
             <div className="flex items-center gap-4 mb-4 md:mb-6">
                 <div className={`p-2 rounded-lg bg-white/5 border border-white/10 ${colors.text}`}>
-                    <skill.icon size={28} />
+                    <skill.icon className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
                 <h3 className={`text-xl md:text-2xl font-bold uppercase tracking-wider text-white`}>
                     {skill.title}
