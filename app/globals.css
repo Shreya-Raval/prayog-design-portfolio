@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  /* Default Day Theme */
+  --background: #FDFBF7; /* Soft Cream */
+  --foreground: #2D2628; /* Deep Charcoal */
+  --accent: #D4AF37; /* Soft Gold */
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+[data-theme='day'] {
+  --background: #FDFBF7;
+  --foreground: #2D2628;
+  --accent: #D4AF37;
+}
+
+[data-theme='pink'] {
+  --background: #FFF0F5; /* Lavender Blush */
+  --foreground: #5D1929; /* Deep Rose Brown */
+  --accent: #D87093; /* Pale Violet Red */
+}
+
+[data-theme='night'] {
+  --background: #0F172A; /* Slate 900 */
+  --foreground: #F8FAFC; /* Slate 50 */
+  --accent: #818CF8; /* Indigo 400 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
